@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import logo from '../../assets/logo2.png';
+import logo from '../../assets/logo.png';
+import { SocialBar } from '../social-bar';
 
 const Root = styled.div`
-	background-color: #333333;
 	min-height: 135px;
 	display: flex;
 	align-items: center;
@@ -18,21 +18,21 @@ const Span = styled.span`
 	font-size: 74px;
 `;
 
-const SubTitle = styled.h2`
+const SubTitle = styled.div`
 	color: #949393;
 	font: 700 54px 'Josefin Sans';
 	text-transform: uppercase;
 `;
 
 const Logo = styled.img`
-	height: 120px;
+	height: 108px;
 	transform: rotateX(0deg);
 	transition: all 0.7s;
+	background-color: #fff;
 
 	:hover {
 		cursor: pointer;
 		transform: rotateX(360deg);
-		/* -webkit-transform: rotateX(360deg); */
 	}
 `;
 
@@ -44,6 +44,7 @@ export const Header: React.FC = () => {
 				room<Span>4</Span>more
 				<SubTitle>music</SubTitle>
 			</Title>
+			<SocialBar />
 		</Root>
 	);
 };
