@@ -1,7 +1,9 @@
-
+import { Header } from './components';
 
 export const App = () => {
-  return (
-    <div>r4m</div>
-  );
+	return (
+		<>
+			<Header />
+		</>
+	);
 };
