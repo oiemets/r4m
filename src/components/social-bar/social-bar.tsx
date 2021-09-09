@@ -5,7 +5,10 @@ type Src = keyof typeof socialIcon;
 
 const socialItems: Array<Src> = ['facebook', 'twitter', 'youtube'];
 
-const Root = styled.div``;
+const Root = styled.div`
+	display: flex;
+	gap: 5px;
+`;
 
 export const SocialBar: React.FC = () => {
 	return (
