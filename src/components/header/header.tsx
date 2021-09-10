@@ -7,14 +7,14 @@ const Root = styled.div`
 	min-height: 135px;
 	display: flex;
 	flex-flow: column nowrap;
-	text-align: right;
 `;
 
 const UpperMenu = styled.div`
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-	gap: 40%;
+	justify-content: space-between;
+	padding: 20px 10%;
 `;
 
 export const Header: React.FC = () => {

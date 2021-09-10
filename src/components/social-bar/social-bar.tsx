@@ -8,6 +8,10 @@ const socialItems: Array<Src> = ['facebook', 'twitter', 'youtube'];
 const Root = styled.div`
 	display: flex;
 	gap: 5px;
+
+	@media (max-width: 767px) {
+		display: none;
+	}
 `;
 
 export const SocialBar: React.FC = () => {

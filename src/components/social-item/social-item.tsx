@@ -2,11 +2,9 @@ import styled from 'styled-components';
 import facebook from '../../assets/facebook.png';
 import twitter from '../../assets/twitter.png';
 import youtube from '../../assets/youtube.png';
-import { Link } from 'react-router-dom';
 
 export type SocialItemProps = {
 	src: keyof typeof socialIcon;
-	linkTo?: string;
 };
 
 export const socialIcon = {
@@ -15,13 +13,19 @@ export const socialIcon = {
 	youtube,
 };
 
+const socialLinks = {
+	facebook: 'https://www.facebook.com/RoomForMoreMusic',
+	twitter: 'https://twitter.com/',
+	youtube: 'https://www.youtube.com/c/RoomForMore',
+};
+
 const Img = styled.img`
 	width: 20px;
 	height: 20px;
 	vertical-align: middle;
 `;
 
-const StyledLink = styled.div`
+const StyledLink = styled.a`
 	background-color: #333;
 	padding: 6px 7px 8px 7px;
 	margin: 10px auto;
@@ -40,11 +44,10 @@ const StyledLink = styled.div`
 	}
 `;
 
-export const SocialItem: React.FC<SocialItemProps> = ({ src, linkTo }) => {
-	const img = (
-		<StyledLink>
+export const SocialItem: React.FC<SocialItemProps> = ({ src }) => {
+	return (
+		<StyledLink href={socialLinks[src]}>
 			<Img alt={src} src={socialIcon[src]} />
 		</StyledLink>
 	);
-	return <>{linkTo ? <Link to={linkTo}>{img}</Link> : img}</>;
 };

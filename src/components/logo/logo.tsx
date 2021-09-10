@@ -17,6 +17,10 @@ const GraphLogo = styled.img`
 		cursor: pointer;
 		transform: rotateX(360deg);
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		display: none;
+	}
 `;
 
 export const Logo: React.FC = () => {
